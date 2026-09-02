@@ -1,0 +1,126 @@
+.pagina-mapa {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mapa {
+  height: 100%;
+  width: 100%;
+  background: var(--cor-fundo);
+}
+
+.mapa.modo-mira {
+  cursor: crosshair;
+}
+
+/* deixa o mapa em tom mais frio/noturno, combinando com o tema */
+.mapa .leaflet-tile-pane {
+  filter: saturate(0.55) brightness(0.75) hue-rotate(-6deg) contrast(1.05);
+}
+
+.botao-flutuante {
+  position: absolute;
+  bottom: 1.6rem;
+  right: 1.4rem;
+  z-index: 900;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(224, 152, 47, 0.35);
+  font-size: 0.9rem;
+}
+
+.botao-flutuante.ativo {
+  background: var(--cor-painel-alt);
+  border-color: var(--cor-ambar);
+  color: var(--cor-ambar);
+}
+
+.faixa-instrucao,
+.faixa-erro {
+  position: absolute;
+  top: 4.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  background: var(--cor-painel);
+  border: 1px solid var(--cor-ambar);
+  color: var(--cor-texto);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  box-shadow: var(--sombra-painel);
+  white-space: nowrap;
+}
+
+.faixa-erro {
+  border-color: var(--cor-descartado);
+  color: var(--cor-descartado);
+}
+
+/* --------- popups do leaflet com o tema do diário --------- */
+
+.leaflet-popup-content-wrapper {
+  background: var(--cor-painel);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+}
+
+.leaflet-popup-tip {
+  background: var(--cor-painel);
+  border: 1px solid var(--cor-borda);
+}
+
+.leaflet-popup-content {
+  margin: 0.8rem 0.9rem;
+  min-width: 220px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--cor-texto-suave);
+}
+
+.popup-avistamento .linha-titulo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.popup-meta {
+  margin: 0.15rem 0;
+  font-size: 0.76rem;
+  color: var(--cor-texto-suave);
+}
+
+.popup-descricao {
+  margin: 0.4rem 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.popup-acoes {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--cor-borda-suave);
+}
+
+.popup-acoes select {
+  flex: 1;
+  background: var(--cor-fundo-alt);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.4rem;
+}
+
+.popup-acoes .botao {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.6rem;
+}

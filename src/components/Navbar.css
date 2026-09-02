@@ -1,0 +1,69 @@
+.barra-superior {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.4rem;
+  background: linear-gradient(to bottom, rgba(14, 26, 19, 0.92), rgba(14, 26, 19, 0));
+  pointer-events: none;
+}
+
+.barra-superior a,
+.barra-superior button,
+.barra-superior .acoes-barra {
+  pointer-events: auto;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.marca-pegada {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 6px var(--cor-ambar-fraca));
+}
+
+.marca small {
+  display: block;
+  font-family: var(--fonte-corpo);
+  font-weight: 400;
+  font-size: 0.68rem;
+  color: var(--cor-texto-suave);
+  letter-spacing: 0.02em;
+}
+
+.acoes-barra {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.saudacao {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.acoes-barra .botao {
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .marca small {
+    display: none;
+  }
+  .saudacao {
+    display: none;
+  }
+}

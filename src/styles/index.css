@@ -1,0 +1,188 @@
+:root {
+  --cor-fundo: #0e1a13;
+  --cor-fundo-alt: #122016;
+  --cor-painel: #16241b;
+  --cor-painel-alt: #1c2e21;
+  --cor-borda: #2d4030;
+  --cor-borda-suave: #223327;
+
+  --cor-ambar: #e0982f;
+  --cor-ambar-forte: #f2b24f;
+  --cor-ambar-fraca: rgba(224, 152, 47, 0.16);
+
+  --cor-texto: #ece4d3;
+  --cor-texto-suave: #a9b8ac;
+  --cor-texto-fraco: #708273;
+
+  --cor-confirmado: #6fa37a;
+  --cor-pendente: #e0982f;
+  --cor-descartado: #b5533c;
+
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-corpo: "Inter", system-ui, sans-serif;
+
+  --sombra-painel: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --raio: 10px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-corpo);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  margin: 0;
+  color: var(--cor-texto);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--fonte-corpo);
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--fonte-corpo);
+}
+
+/* foco visível para acessibilidade */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cor-ambar-forte);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --------- utilidades de botão --------- */
+
+.botao {
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-painel-alt);
+  color: var(--cor-texto);
+  padding: 0.6rem 1rem;
+  border-radius: var(--raio);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.botao:hover {
+  border-color: var(--cor-ambar);
+}
+
+.botao-primario {
+  background: var(--cor-ambar);
+  border-color: var(--cor-ambar);
+  color: #241505;
+  font-weight: 600;
+}
+
+.botao-primario:hover {
+  background: var(--cor-ambar-forte);
+  border-color: var(--cor-ambar-forte);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --------- cartão estilo página de caderno --------- */
+
+.cartao {
+  background: var(--cor-painel);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-painel);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.campo label {
+  font-size: 0.78rem;
+  color: var(--cor-texto-suave);
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  background: var(--cor-fundo-alt);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  color: var(--cor-texto);
+  padding: 0.55rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.erro {
+  color: var(--cor-descartado);
+  font-size: 0.82rem;
+  margin: -0.4rem 0 0.8rem;
+}
+
+/* etiqueta de status */
+.selo {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.selo-pendente {
+  background: rgba(224, 152, 47, 0.18);
+  color: var(--cor-pendente);
+}
+.selo-confirmado {
+  background: rgba(111, 163, 122, 0.18);
+  color: var(--cor-confirmado);
+}
+.selo-descartado {
+  background: rgba(181, 83, 60, 0.18);
+  color: var(--cor-descartado);
+}

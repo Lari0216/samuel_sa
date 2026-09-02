@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  MORADOR
+  ADMIN
+}
+
+enum StatusAvistamento {
+  PENDENTE
+  CONFIRMADO
+  DESCARTADO
+}
+
+model Usuario {
+  id           Int           @id @default(autoincrement())
+  nome         String
+  email        String        @unique
+  senha        String
+  role         Role          @default(MORADOR)
+
+  avistamentos Avistamento[]
+
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Avistamento {
+  id               Int                @id @default(autoincrement())
+  titulo           String
+  descricao        String
+  criatura         String
+  dataAvistamento  DateTime
+  localizacao      String
+  latitude         Float
+  longitude        Float
+  status           StatusAvistamento  @default(PENDENTE)
+
+  usuarioId        Int
+  usuario          Usuario            @relation(fields: [usuarioId], references: [id])
+
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+}
+

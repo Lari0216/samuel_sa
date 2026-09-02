@@ -1,0 +1,51 @@
+.tela-autenticacao {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(224, 152, 47, 0.14), transparent 45%),
+    var(--cor-fundo);
+}
+
+.cartao-autenticacao {
+  width: 100%;
+  max-width: 380px;
+  padding: 2.2rem 2rem;
+}
+
+.cartao-autenticacao h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.cartao-autenticacao .subtitulo {
+  color: var(--cor-texto-suave);
+  font-size: 0.88rem;
+  margin-bottom: 1.6rem;
+}
+
+.cartao-autenticacao form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartao-autenticacao .botao-primario {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.rodape-autenticacao {
+  margin-top: 1.4rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+
+.rodape-autenticacao a {
+  color: var(--cor-ambar);
+  text-decoration: none;
+  font-weight: 600;
+}
