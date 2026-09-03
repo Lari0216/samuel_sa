@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:server": "nodemon src/server.js",
-    "dev:client": "vite",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+  "dev:server": "nodemon src/server.js",
+  "dev:client": "vite",
+  "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+  "build": "vite build",
+  "start": "node src/server.js",
+  "lint": "oxlint",
+  "preview": "vite preview"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.0",
