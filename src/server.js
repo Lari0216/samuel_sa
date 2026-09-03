@@ -8,7 +8,7 @@ const servidor = express()
 const porta = Number(process.env.PORT) || 3000
 const segredoJwt = process.env.JWT_SECRET || "little-ville-secret"
 
-servidor.use(cors({ origin: "https://little-ville.onrender.com/entrar" }))
+servidor.use(cors({ origin: "https://little-ville.onrender.com" }))
 servidor.use(express.json())
 
 const formatarUsuario = (usuario) => {
