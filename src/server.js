@@ -408,7 +408,7 @@ servidor.delete("/api/avistamentos/:id", autenticar, async (req, res) => {
   }
 })
 
-servidor.use((error, req, res) => {
+servidor.use((error, req, res, next) => {
   console.error(error)
   res.status(500).json({ message: "Erro interno do servidor", error: error.message })
 })
